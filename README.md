@@ -1,1 +1,4 @@
-# Comparative-Analysis-of-RNN-Architectures-for-Sentiment-Classification
+Include:
+Setup instructions (Python version, dependencies)
+How to run training and evaluation scripts
+Expected runtime and output files
