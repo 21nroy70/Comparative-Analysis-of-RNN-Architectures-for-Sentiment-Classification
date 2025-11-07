@@ -5,19 +5,4 @@ Include:
 - Expected runtime and output files
 
 
-Outline:
-
-├── data/
-├── src/
-│   ├── preprocess.py
-│   ├── models.py
-│   ├── train.py
-│   ├── evaluate.py
-│   └── utils.py
-├── results/
-│   ├── metrics.csv
-│   └── plots/
-├── report.pdf
-├── requirements.txt
-└── README.md
 
