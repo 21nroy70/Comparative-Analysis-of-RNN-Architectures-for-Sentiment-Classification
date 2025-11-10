@@ -1,4 +1,4 @@
-Before running any of the .py files, make sure to run on the terminal (once you're in the directory ofc): 
+Before running any of the .py files, make sure to run on the terminal (once you're in the directory ofc) as the **VERY FIRST THINGS TO DO**: 
 
 
 1. conda create -n imdb-rnn python=3.10 -y
