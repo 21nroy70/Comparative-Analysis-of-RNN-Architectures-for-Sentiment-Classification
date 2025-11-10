@@ -1,5 +1,11 @@
-# make sure to have Python 3.10+ for this to work because I didn't and had to upgrade 
-#to make sure these versions were availible
+# make sure to have Python 3.10+ for this to work because I didn't and had to upgrade to make sure these versions were availible
+
+
+# 1. conda create -n imdb-rnn python=3.10 -y
+# 2. conda activate imdb-rnn
+# 3. pip install -r requirements.txt
+ 
+
 
 torch>=2.1
 pandas>=2.0
