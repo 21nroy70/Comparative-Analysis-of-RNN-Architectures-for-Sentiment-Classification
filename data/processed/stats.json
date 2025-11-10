@@ -1,0 +1,7 @@
+{
+  "n_train": 25000,
+  "n_test": 25000,
+  "vocab_size": 10000,
+  "avg_len_train": 239.83972,
+  "avg_len_test": 239.36308
+}
