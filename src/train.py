@@ -2,6 +2,12 @@
 How to run/execute this it (make sure you ran preprocess.py first to build vocab and clean data, 
                             you can see how to run it at the top comment of the program in preprocess.py):
 
+                            
+
+
+BTW, running all of these commands below (numbers 1 - 8, with 3-4 commands in each took FOREVER LOLLLLL so beaware - probably will take an hour or 2 but took me much longer bc of debugging and fixing and making sure it worked)
+
+There's also like hundreds of unique ways to varying all factors to literally get each type of combo so I limited it down to like 1/5 of them, and even that took hours to run so have fun :) jk, just look at metrics.csv and run evaluate.py to see the summary and plots since it's already contained here when I ran this file to get the data/metrics
 
 For a quick and the way I ran to debug and test out my code (it was hell lol) was running this below since it was quickiest:
 python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 3
@@ -20,31 +26,43 @@ python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 
 python -m src.train --arch bilstm --activation relu --optimizer adam --seq_len 50 --epochs 6 
 
 
+Note: Alright, bilistm has the lowest loss over each epoch, but takes more than double the time than lstm with the exact same configs of optimizer, sequence length, etc. So, RNN is trash but will vary paremters of lstm and bilstm to see how they compare and find the optimal...
+
+
 2. No clipping but changing Sequence Length: 
 
 python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 25 --epochs 6 
 
-python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 6 
-
 python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 100 --epochs 6 
+
+# BiLSTM
+python -m src.train --arch bilstm --activation relu --optimizer adam --seq_len 25  --epochs 6
+python -m src.train --arch bilstm --activation relu --optimizer adam --seq_len 100 --epochs 6
+
 
 
 3. No clipping but changing Activation Functions: 
-
-python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 6 
 
 python -m src.train --arch lstm --activation tanh --optimizer adam --seq_len 50 --epochs 6 
 
 python -m src.train --arch lstm --activation sigmoid --optimizer adam --seq_len 50 --epochs 6
 
+# BiLISTM
+python -m src.train --arch bilstm --activation tanh    --optimizer adam --seq_len 50 --epochs 6
+python -m src.train --arch bilstm --activation sigmoid --optimizer adam --seq_len 50 --epochs 6
+
+
 
 4. No clipping but changing Optimizers: 
 
-python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 6 
-
-python -m src.train --arch lstm --activation relu --optimizer sgd --seq_len 50 --epochs 6 
+python -m src.train --arch lstm --activation relu --optimizer sgd --seq_len 50 --epochs 6 --lr 0.01
 
 python -m src.train --arch lstm --activation relu --optimizer rmsprop --seq_len 50 --epochs 6 
+
+# BiLISTM
+python -m src.train --arch bilstm --activation relu --optimizer sgd --seq_len 50 --epochs 6 --lr 0.01
+python -m src.train --arch bilstm --activation relu --optimizer rmsprop --seq_len 50 --epochs 6
+
 
 
 5. Clipping and changing Architecture: 
@@ -55,31 +73,43 @@ python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 
 python -m src.train --arch bilstm --activation relu --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0 
 
 
+
 6. Clipping and changing Sequence Length: 
 
 python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 25 --epochs 6 --grad_clip 1.0 
 
-python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0 
-
 python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 100 --epochs 6 --grad_clip 1.0 
+
+# BiLSTM with gradient clipping
+python -m src.train --arch bilstm --activation relu --optimizer adam --seq_len 25  --epochs 6 --grad_clip 1.0
+python -m src.train --arch bilstm --activation relu --optimizer adam --seq_len 100 --epochs 6 --grad_clip 1.0
 
 
 7. Clipping and changing Activation Functions: 
-
-python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0 
 
 python -m src.train --arch lstm --activation tanh --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0 
 
 python -m src.train --arch lstm --activation sigmoid --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0 
 
+#BiLISTM with gradient clipping
+python -m src.train --arch bilstm --activation tanh --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0
+python -m src.train --arch bilstm --activation sigmoid --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0
+
+
 
 8. Clipping and changing Optimizers: 
 
-python -m src.train --arch lstm --activation relu --optimizer adam --seq_len 50 --epochs 6 --grad_clip 1.0 
-
-python -m src.train --arch lstm --activation relu --optimizer sgd --seq_len 50 --epochs 6 --grad_clip 1.0 
+python -m src.train --arch lstm --activation relu --optimizer sgd --seq_len 50 --epochs 6 --grad_clip 1.0 --lr 0.01
 
 python -m src.train --arch lstm --activation relu --optimizer rmsprop --seq_len 50 --epochs 6 --grad_clip 1.0
+
+# BiLISTM with clipping
+python -m src.train --arch bilstm --activation relu --optimizer sgd     --seq_len 50 --epochs 6 --grad_clip 1.0 --lr 0.01
+python -m src.train --arch bilstm --activation relu --optimizer rmsprop --seq_len 50 --epochs 6 --grad_clip 1.0
+
+
+
+
 
 '''
 

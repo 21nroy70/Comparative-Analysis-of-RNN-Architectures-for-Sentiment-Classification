@@ -1,0 +1,15 @@
+{
+  "model": "bilstm",
+  "activation": "relu",
+  "optimizer": "rmsprop",
+  "seq_len": 50,
+  "grad_clipping": true,
+  "accuracy": 0.7682,
+  "macro_f1": 0.7675509871073485,
+  "mean_epoch_time_sec": 51.28590190410614,
+  "epochs": 6,
+  "batch_size": 32,
+  "hidden_size": 64,
+  "dropout": 0.5,
+  "emb_dim": 100
+}
