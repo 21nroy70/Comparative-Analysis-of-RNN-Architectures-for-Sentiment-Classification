@@ -1,5 +1,9 @@
-# make sure to have Python 3.10+ for this to work because I didn't and had to upgrade to make sure these versions were availible
+# THIS SHOULD BE THE FIRST FILE OPENED AND RUNNED!
 
+# Make sure to have Python 3.10+ for this to work because I didn't and had to upgrade to make sure these versions were availible
+
+
+#Run these 3 in the folder with my code (make sure you are outside all of these folders and not in any like src or data or anything:
 
 # 1. conda create -n imdb-rnn python=3.10 -y
 # 2. conda activate imdb-rnn
@@ -7,11 +11,10 @@
  
 # Might also get a few numpy warnings, so stackoverflow told me to use this on terminal once ur already in the conda above:
 
-# pip install "numpy<2" --upgrade
 
-torch>=2.1
-pandas>=2.0
-numpy>=1.24
-scikit-learn>=1.3
-matplotlib>=3.8
-tqdm>=4.66
+torch==2.2.2
+pandas==2.3.3
+numpy==1.26.4
+scikit-learn==1.5.2
+matplotlib==3.8.4
+tqdm==4.66.4
