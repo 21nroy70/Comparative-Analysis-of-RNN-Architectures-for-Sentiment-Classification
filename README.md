@@ -25,9 +25,8 @@ Before running any of the .py files, make sure to run on the terminal (once you'
 
 Include:
 
-- Setup instructions (Python version, dependencies)
-- How to run training and evaluation scripts
-- Expected runtime and output files
+- Python 3.10 and dependeices are in requirements.txt which is supposed to be ran in step 3 as you can see above
+- Running the train.py on all 30 variations (which is ~ 20% of all possible combos) took me 5 hours because of 6 epochs, and especially with bilstm running the longest, followed by lstm. I have already included and updated the data with the finished runs which is stored in the "metrics.csv" or "summary_table_sorted.csv" where the final combos are sorted in a clean order to view. Likewise,you can see every plot in the results/plots folder, including the optimal plot with the 3 optimal models with their specific combo listed as well in the "optimal_summary.md" and "optimal_summary.csv" files. 
 
 
 
